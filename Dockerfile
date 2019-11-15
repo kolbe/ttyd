@@ -1,5 +1,5 @@
-FROM ubuntu:16.04
-LABEL maintainer "Shuanglei Tao - tsl0922@gmail.com"
+FROM ubuntu:18.04
+LABEL maintainer "Kolbe Kegel - kolbe@pingcap.com"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -8,14 +8,15 @@ RUN apt-get update \
       curl \
       g++ \
       git \
-      libjson-c2 \
+      libjson-c3 \
       libjson-c-dev \
       libssl1.0.0 \
       libssl-dev \
-      libwebsockets7 \
+      libwebsockets8 \
       libwebsockets-dev \
       pkg-config \
       vim-common \
+      mysql-client screen less vim \
     && git clone --depth=1 https://github.com/tsl0922/ttyd.git /tmp/ttyd \
     && cd /tmp/ttyd && mkdir build && cd build \
     && cmake -DCMAKE_BUILD_TYPE=RELEASE .. \
