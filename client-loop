@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+args=( "$@" )
+args+=( -P 3306 -u root --prompt='TiDB (\u) [\d]>\ ' )
+while true; do
+    read -r -s -p 'TiDB root password: ' password
+    command mysql "${args[@]}" --password="$password"
+done
+

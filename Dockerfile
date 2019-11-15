@@ -38,6 +38,9 @@ ENV TINI_VERSION v0.18.0
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 
+ADD client-loop /client-loop
+RUN chmod +x /client-loop
+
 EXPOSE 7681
 
 ENTRYPOINT ["/tini", "--"]
